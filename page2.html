@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Προϊόντα</title>
+    <style>
+        /* Ορισμός για το body της ιστοσελίδας */
+        body {
+            background-color: black; /* Μαύρο φόντο */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Σταθερό πάνω μέρος */
+        }
+
+        /* Δομή για τα προϊόντα με Flexbox */
+        .products-container {
+            display: flex;
+            flex-wrap: wrap; /* Επιτρέπει την αναδίπλωση των προϊόντων */
+            justify-content: center; /* Κεντράρει τα προϊόντα */
+            gap: 20px; /* Απόσταση μεταξύ των προϊόντων */
+            padding: 20px;
+            margin-top: 20px; /* Επιπλέον περιθώριο από πάνω για όλα τα προϊόντα */
+        }
+
+        /* Στυλ για το κάθε προϊόν */
+        .product {
+            width: 350px; /* Αυξήσαμε το πλάτος για μεγαλύτερες φωτογραφίες */
+            height: 460px; /* Αυξήσαμε το ύψος για μεγαλύτερη εικόνα */
+            background-color: black;
+            border: 5px solid white; /* Μειώσαμε το border */
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px 5px rgba(255, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        /* Στυλ για την εικόνα του προϊόντος */
+        .product img {
+            width: 100%; /* Το πλάτος της εικόνας είναι το 100% του border */
+            height: 100%; /* Το ύψος της εικόνας είναι το 100% του border */
+            object-fit: cover; /* Καλύπτει το container χωρίς κενά */
+        }
+
+        /* Στυλ για τις πληροφορίες προϊόντος (όνομα και τιμή) */
+        .product-info {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6); /* Ημιδιαφανές φόντο για καλύτερη ορατότητα */
+            color: white;
+            text-align: center;
+            border-top: 2px solid white; /* Λευκή γραμμή πάνω από το κείμενο */
+        }
+
+        .product-name {
+            font-size: 24px; /* Μεγαλύτερο μέγεθος για το όνομα */
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .product-price {
+            font-size: 20px; /* Μεγαλύτερο μέγεθος για την τιμή */
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Εφέ όταν το βλέπει κάποιος από κινητό */
+        @media (max-width: 768px) {
+            /* Κάνουμε τα προϊόντα μεγαλύτερα για κινητό */
+            .product {
+                width: 80%; /* Αυξήσαμε το πλάτος για κινητό */
+                height: 550px; /* Αυξήσαμε το ύψος για κινητό */
+                border: 5px solid white; /* Διατηρούμε το border */
+            }
+
+            .product-name {
+                font-size: 24px; /* Μεγαλύτερο μέγεθος για το όνομα */
+            }
+
+            .product-price {
+                font-size: 20px; /* Μεγαλύτερο μέγεθος για την τιμή */
+            }
+        }
+
+        /* Εφέ όταν το βλέπει κάποιος από υπολογιστή */
+        @media (min-width: 769px) {
+            .product {
+                width: 350px; /* Σταθερό πλάτος για υπολογιστή */
+                height: 460px; /* Σταθερό ύψος για υπολογιστή */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="products-container">
+        <div class="product">
+            <!-- Εικόνα μέσα στο προϊόν -->
+            <img src="bananaice.png" alt="Προϊόν 1">
+            
+            <!-- Πληροφορίες προϊόντος (όνομα και τιμή) -->
+            <div class="product-info">
+                <p class="product-name">Mango Peach / Banana Ice</p>
+                <p class="product-price">€30.00</p>
+            </div>
+        </div>
+        <div class="product">
+            <!-- Εικόνα μέσα στο προϊόν -->
+            <img src="redbull.png" alt="Προϊόν 2">
+            
+            <!-- Πληροφορίες προϊόντος (όνομα και τιμή) -->
+            <div class="product-info">
+                <p class="product-name">RedBull / Strawberry Mango</p>
+                <p class="product-price">€30.00</p>
+            </div>
+        </div>
+        <!-- Προσθέστε άλλα προϊόντα με την ίδια δομή -->
+        <div class="product">
+            <!-- Εικόνα μέσα στο προϊόν -->
+            <img src="pineappleice.png" alt="Προϊόν 3">
+            
+            <!-- Πληροφορίες προϊόντος (όνομα και τιμή) -->
+            <div class="product-info">
+                <p class="product-name">Pineapple Ice / Blue Fusion</p>
+                <p class="product-price">€30.00</p>
+            </div>
+        </div>
+        <div class="product">
+            <!-- Εικόνα μέσα στο προϊόν -->
+            <img src="mixedfruit.png" alt="Προϊόν 4">
+            
+            <!-- Πληροφορίες προϊόντος (όνομα και τιμή) -->
+            <div class="product-info">
+                <p class="product-name">Mixed Fruit / Blueberry Ice</p>
+                <p class="product-price">€30.00</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
